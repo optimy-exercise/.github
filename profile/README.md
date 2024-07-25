@@ -42,7 +42,12 @@ The objective was to create a fully automated deployment pipeline using Terrafor
 ### Application Flow
 1. **Terraform** provisions the EC2 instance and associated resources.
 2. **Ansible** configures the server, installs Docker, and sets up the MySQL and Grafana containers.
-3. **GitHub Actions** pipeline:
+3. **GitHub Actions** Infra pipeline:
+   - Provisions EC2 instance
+   - Downloads requirements
+   - Sets up Mysql Container
+   - Sets up Grafana Container
+4. **GitHub Actions** CICD pipeline:
    - Builds the Docker image for the PHP application.
    - Pushes the Docker image to DockerHub.
    - Deploys the Docker container to the EC2 instance.
@@ -53,4 +58,4 @@ The objective was to create a fully automated deployment pipeline using Terrafor
 - **MySQL Database**: Stores application data.
 - **Grafana**: Monitors AWS CloudWatch metrics and provides a dashboard for visualization.
 
-This project demonstrates the use of modern DevOps practices to automate the deployment and monitoring of a web application, ensuring reliability and ease of management. Of course there is space for improvement, adding versioning to our containers, managing state of Terraform and using some kind of Vault or utilizing more Github Secrets for secret management.
+This project demonstrates the use of modern DevOps practices to automate the deployment and monitoring of a web application, ensuring reliability and ease of management. Of course there is space for improvement, like adding versioning to our containers, managing state of Terraform and using some kind of Vault or utilizing more Github Secrets for secret management.
