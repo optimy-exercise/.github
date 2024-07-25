@@ -41,7 +41,7 @@ The objective was to create a fully automated deployment pipeline using Terrafor
 
 ### Application Flow
 1. **Terraform** provisions the EC2 instance and associated resources.
-2. **Ansible** configures the server, installs Docker, and sets up the MySQL and Grafana containers.
+2. **Ansible** configures the server (VPS), installs Docker, and sets up the MySQL and Grafana containers.
 3. **GitHub Actions** Infra pipeline:
    - Provisions EC2 instance
    - Downloads requirements
